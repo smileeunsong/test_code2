@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "test": "DOTENV_CONFIG_PATH=.env.test jest --setupFiles=dotenv/config",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "supertest": "^6.3.3"
+  },
+  "name": "test_code2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smileeunsong/test_code2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smileeunsong/test_code2/issues"
+  },
+  "homepage": "https://github.com/smileeunsong/test_code2#readme",
+  "description": ""
+}
