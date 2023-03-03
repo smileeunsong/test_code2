@@ -1,20 +1,23 @@
 require('dotenv').config();
 
 const { createApp } = require('./app');
-const { connection } = require('./src/models/dataSource');
+// const { connection } = require('./src/models/dataSource');
+const { dataSource } = require('./src/models/dataSource');
 
 const startServer = async () => {
   const app = createApp();
   const PORT = process.env.PORT;
 
-  await connection.connect();
-  // .then(() => {
-  //   console.log('mysql has been connected!');
-  // })
-  // .catch((err) => {
-  //   console.error('Error occurred during mysql connection', err);
-  //   connection.destroy();
-  // });
+  // await connection.connect();
+  await dataSource
+    .initialize()
+    .then(() => {
+      console.log('Data Source has been initialized');
+    })
+    .catch(() => {
+      console.log('Errors occurred in Data Source initializing');
+      dataSource.destroy();
+    });
 
   try {
     app.listen(PORT, () => {
